@@ -11,13 +11,6 @@ mongoose.connect(dbConfig.url);
 
 var app = express();
 
-
-//
-//var routes = require('./routes/index');
-//var users = require('./routes/users');
-//var login = require('./routes/login');//
-//
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
