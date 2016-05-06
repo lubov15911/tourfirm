@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/Reset.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='/javascripts/jquery-1.11.3.js')
+  body
+    div.wrapper
+      div.container
+        include parts/header
+        div.heigth
+          block content
+          p.clear-fix
+      include parts/footer
+
+    script(src='/javascripts/script.js')

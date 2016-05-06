@@ -1,0 +1,252 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: url('../images/body.jpg');
+}
+
+a {
+  color: #104E67;
+  text-decoration: none;
+}
+
+.clear-fix {
+  clear: both;
+}
+
+.wrapper {
+  width: 1000px;
+  margin: 300px auto 20px auto;
+  box-shadow: 0 0 10px 1px #9c726b;
+  min-height: calc(100% - 30px);
+  border-radius: 10px;
+}
+
+
+.container {
+  padding-bottom: 70px;
+}
+
+.header {
+  height: 75px;
+  position: relative;
+}
+
+  .header-img {
+    width: 100%;
+  }
+
+  .nav {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #f9efff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+    .list-style {
+      list-style: none;
+      font-size: 0;
+      display: flex;
+      justify-content: space-around;
+      align-items: stretch;
+      height: 75px;
+    }
+
+      .list-style li {
+        font-size: 20px;
+        width: calc(100% / 4);
+        text-align: center;
+      }
+
+      .list-style li:hover,
+      .btn-signin:hover {
+        background: linear-gradient(to top, #f0e5ee, rgba(0, 0, 0, 0) );
+      }
+
+      .list-style li a {
+        padding: 0 50px;
+        height: 75px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+
+
+.footer {
+  height: 70px;
+  margin-top: -70px;
+  background-color: #b8c4ff;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+  .btn-signin {
+    background-color: #f9efff;
+    border: none;
+    border-radius: 15px;
+    height: 50px;
+    min-width: 100px;
+    font-size: 18px;
+    color: #104E67;
+  }
+
+
+.popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 250px;
+  background-color: #f9efff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 1px #9c726b;
+  display: none;
+}
+
+  .popup form,
+  #filter-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: inherit;
+  }
+
+    .popup form label,
+    #filter-form label {
+      display: flex;
+      justify-content: center;
+      line-height: 30px;
+    }
+
+      label input {
+        width: 180px;
+        box-sizing: border-box;
+        padding-left: 10px;
+      }
+
+      label span,
+      #filter-form > span {
+        font-size: 16px;
+        padding-right: 10px;
+      }
+
+    .btn-input {
+      background-color: #b8c4ff;
+      margin: 0 auto;
+    }
+
+    .btn-input:hover {
+      background: linear-gradient(to top, #f0b7a1, rgba(0, 0, 0, 0) );
+    }
+
+  .btn-close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 22px;
+    border: none;
+    background-color: inherit;
+    color: #9c726b;
+  }
+
+  .btn-close:hover {
+    font-size: 24px;
+  }
+
+.heigth {
+  background-color: #f0e5ee;
+  min-height: 315px;
+}
+
+.filter {
+  float: right;
+  width: 350px;
+  min-height: 315px;
+  box-sizing: border-box;
+  padding: 15px 30px;
+}
+
+.search {
+  width: calc(100% - 350px);
+  box-sizing: border-box;
+  padding: 15px 30px;
+}
+
+  .filter h1,
+  .search h1 {
+    font-size: 20px;
+    padding-bottom: 5px;
+  }
+
+    #search-form input {
+      height: 40px;
+      font-size: 16px;
+      width: calc(100% - 100px);
+    }
+
+    .filter h3 {
+      padding-bottom: 15px;
+    }
+
+    #filter-form label {
+      margin-bottom: 10px;
+    }
+
+      #filter-form input,
+      #search-form input {
+        background: linear-gradient(to top, white, rgba(0, 0, 0, 0) );
+        border: none;
+        border-left: 2px solid white;
+        border-right: 2px solid white;
+        line-height: inherit;
+      }
+
+        #filter-form .country input {
+          width: 100%;
+        }
+
+        #filter-form .stars input {
+          width: 90px;
+        }
+
+      #filter-form .cold_table {
+        justify-content: flex-start;
+      }
+
+        #filter-form .cold_table input {
+          width: 20px;
+          height: 20px;
+        }
+
+      #filter-form .USD,
+      #filter-form .EUR,
+      #filter-form .RUB {
+        justify-content: flex-end;
+      }
+
+        #filter-form .USD input,
+        #filter-form .EUR input,
+        #filter-form .RUB input {
+          width: 150px;
+        }
+
+    #filter-btn,
+    #search-btn {
+      background: linear-gradient(to top, white, rgba(0, 0, 0, 0) );
+      border: 2px solid white;
+      line-height: inherit;
+      height: 50px;
+      min-width: 100px;
+      font-size: 18px;
+      color: #104E67;
+    }
+
+    #search-btn {
+      height: 40px;
+    }
+
+    #filter-btn:hover,
+    #search-btn:hover {
+      background: white;
+    }

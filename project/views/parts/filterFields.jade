@@ -1,0 +1,25 @@
+section.filter
+  h1 Подбор тура:
+  h3 * обязятельное поле
+  form#filter-form(action='/filter' method='POST')
+    label.country
+      span Страна*:
+      input(type='text', name='country', placeholder='country', required)
+    label.stars
+      span Количество звезд отеля:
+      input(type='number', name='stars', min='1', max='5', value='3')
+    label.cold_table
+      span Шведский стол:
+      input(type='checkbox', name='cold_table', checked='true')
+    span Стоимость:
+    div
+      label.USD
+        span USD:
+        input(type='number', name='USD', min='5')
+      label.EUR
+        span EUR:
+        input(type='number', name='EUR', min='5')
+      label.RUB
+        span RUB:
+        input(type='number', name='RUB', min='5')
+    button#filter-btn(type='submit') Подобрать
