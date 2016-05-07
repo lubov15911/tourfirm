@@ -5,9 +5,18 @@ extends layout
 block content
   include parts/filterFields
   include parts/searchField
-  ul
-    if message
-      each i in message
-        li tour_name ---> #{i}
-    else
-      li qwerty
+  section.result-searching
+    ul
+      if message
+        each i in message
+          li
+            img.small-img(src='#{i.hotel.image}')
+            h1 #{i.tour_name}
+            p Страна #{i.hotel.address.country}
+            p Стоимость #{i.price.USD} USD
+            form.more-info-form(action='/info' method='POST')
+              input(type='number', name='id', value='#{i._id}', required)
+              button#more-info-btn(type='submit') Подробнее
+            p.clear-fix
+      else
+        li

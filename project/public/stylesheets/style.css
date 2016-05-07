@@ -10,6 +10,7 @@ a {
 
 .clear-fix {
   clear: both;
+  height: 0;
 }
 
 .wrapper {
@@ -167,7 +168,8 @@ a {
   padding: 15px 30px;
 }
 
-.search {
+.search,
+.result-searching {
   width: calc(100% - 350px);
   box-sizing: border-box;
   padding: 15px 30px;
@@ -232,7 +234,8 @@ a {
         }
 
     #filter-btn,
-    #search-btn {
+    #search-btn,
+    #more-info-btn {
       background: linear-gradient(to top, white, rgba(0, 0, 0, 0) );
       border: 2px solid white;
       line-height: inherit;
@@ -247,6 +250,33 @@ a {
     }
 
     #filter-btn:hover,
-    #search-btn:hover {
+    #search-btn:hover,
+    #more-info-btn:hover {
       background: white;
+    }
+
+.result-searching {
+  background: red;
+}
+
+  .result-searching ul li {
+    background: greenyellow;
+    margin-bottom: 10px;
+    max-height: 250px;
+    overflow: hidden;
+  }
+
+    .result-searching ul li .small-img {
+      float: left;
+      width: 150px;
+      height: 100px;
+      background: blue;
+    }
+
+      #more-info-btn {
+        float: right;
+      }
+
+    .result-searching ul li .more-info-form input[type='number'] {
+      display: none;
     }
