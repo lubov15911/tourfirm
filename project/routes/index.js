@@ -71,5 +71,17 @@ module.exports = function(passport){
 
   router.post('/filter', controller.filter);
 
+  router.get('/offlinereservation', isAuthenticated, function(req, res) {
+    res.render('offlinereservation', { user: req.user });
+  });
+
+  router.get('/createdocs', isAuthenticated, function(req, res) {
+    res.render('createdocs', { user: req.user });
+  });
+
+  router.get('/statistics', isAuthenticated, function(req, res) {
+    res.render('statistics', { user: req.user });
+  });
+
   return router;
 };

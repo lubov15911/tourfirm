@@ -1,12 +1,21 @@
 header.header
   nav.nav
     ul.list-style
-      li
-        a(href='/')
-          span Главная
-      li
-        a(href='/search') Поиск тура
-      li
-        a(href='/reservation') Бронирование тура
-      li
-        a(href='/news') Новости
+      if user
+        li
+          a(href='/home') Главная
+        li
+          a(href='/offlinereservation') Оформить заявление на бронь
+        li
+          a(href='/createdocs') Оформить документы
+        li
+          a(href='/statistics') Составить анализ продаж
+      else
+        li
+          a(href='/') Главная
+        li
+          a(href='/search') Поиск тура
+        li
+          a(href='/reservation') Бронирование тура
+        li
+          a(href='/news') Новости

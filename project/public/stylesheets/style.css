@@ -31,10 +31,6 @@ a {
   position: relative;
 }
 
-  .header-img {
-    width: 100%;
-  }
-
   .nav {
     position: absolute;
     bottom: 0;
@@ -59,8 +55,7 @@ a {
         text-align: center;
       }
 
-      .list-style li:hover,
-      .btn-signin:hover {
+      .list-style li:hover {
         background: linear-gradient(to top, #f0e5ee, rgba(0, 0, 0, 0) );
       }
 
@@ -76,19 +71,25 @@ a {
 .footer {
   height: 70px;
   margin-top: -70px;
-  background-color: #b8c4ff;
+  background-color: #f9efff;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  display: flex;
 }
 
   .btn-signin {
-    background-color: #f9efff;
-    border: none;
-    border-radius: 15px;
-    height: 50px;
-    min-width: 100px;
+    height: inherit;
+    width: 100%;
     font-size: 18px;
+    border: none;
+    background: none;
     color: #104E67;
+    text-align: center;
+    line-height: 70px;
+  }
+
+  .btn-signin:hover {
+    background: linear-gradient(to bottom, #f0e5ee, rgba(0, 0, 0, 0) );
   }
 
 

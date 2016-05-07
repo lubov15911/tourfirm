@@ -1,6 +1,9 @@
 footer.footer
-  button#signIn.btn-signin Войти
-  button#signUn.btn-signin Регистрация
+  if user
+    button#signUn.btn-signin Регистрация
+    a(href='/signout')#logOut.btn-signin Выйти
+  else
+    button#signIn.btn-signin Войти
   div#login-popup.popup
     form#check-user-form(action='/login' method='POST')
       label.login
