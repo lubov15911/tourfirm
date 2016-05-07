@@ -105,6 +105,10 @@ a {
   display: none;
 }
 
+#done-popup {
+  display: block;
+}
+
   .popup form,
   #filter-form {
     display: flex;
@@ -114,7 +118,8 @@ a {
   }
 
     .popup form label,
-    #filter-form label {
+    #filter-form label,
+    #reservation-form label {
       display: flex;
       justify-content: center;
       line-height: 30px;
@@ -127,7 +132,8 @@ a {
       }
 
       label span,
-      #filter-form > span {
+      #filter-form > span,
+      #reservation-form > p {
         font-size: 16px;
         padding-right: 10px;
       }
@@ -160,7 +166,8 @@ a {
   min-height: 315px;
 }
 
-.filter {
+.filter,
+.doc-info {
   float: right;
   width: 350px;
   min-height: 315px;
@@ -169,14 +176,16 @@ a {
 }
 
 .search,
-.result-searching {
+.result-searching,
+.reservation {
   width: calc(100% - 350px);
   box-sizing: border-box;
   padding: 15px 30px;
 }
 
   .filter h1,
-  .search h1 {
+  .search h1,
+  .reservation h1 {
     font-size: 20px;
     padding-bottom: 5px;
   }
@@ -187,7 +196,8 @@ a {
       width: calc(100% - 100px);
     }
 
-    .filter h3 {
+    .filter h3,
+    .reservation h3 {
       padding-bottom: 15px;
     }
 
@@ -195,8 +205,13 @@ a {
       margin-bottom: 10px;
     }
 
+    #reservation-form label {
+      margin-bottom: 20px;
+    }
+
       #filter-form input,
-      #search-form input {
+      #search-form input,
+      #reservation-form input {
         background: linear-gradient(to top, white, rgba(0, 0, 0, 0) );
         border: none;
         border-left: 2px solid white;
@@ -204,8 +219,22 @@ a {
         line-height: inherit;
       }
 
-        #filter-form .country input {
+        #filter-form .country input,
+        #reservation-form .fullname input,
+        #reservation-form .phone input {
           width: 100%;
+        }
+
+        #reservation-form .email input {
+          width: 88%;
+        }
+
+        #reservation-form .phone input {
+          width: 70%;
+        }
+
+        #reservation-form .tickets input {
+          width: 51%;
         }
 
         #filter-form .stars input {
@@ -233,9 +262,10 @@ a {
           width: 150px;
         }
 
-    #filter-btn,
-    #search-btn,
-    #more-info-btn {
+    /*#filter-btn,*/
+    /*#search-btn,*/
+    /*#more-info-btn {*/
+    button {
       background: linear-gradient(to top, white, rgba(0, 0, 0, 0) );
       border: 2px solid white;
       line-height: inherit;
@@ -249,9 +279,10 @@ a {
       height: 40px;
     }
 
-    #filter-btn:hover,
-    #search-btn:hover,
-    #more-info-btn:hover {
+    /*#filter-btn:hover,*/
+    /*#search-btn:hover,*/
+    /*#more-info-btn:hover*/
+    button:hover {
       background: white;
     }
 
@@ -277,6 +308,15 @@ a {
         float: right;
       }
 
-    .result-searching ul li .more-info-form input[type='number'] {
+    .result-searching ul li .more-info-form input[type='number'],
+    .tour-info ul li .reservation-page-form input[type='number'],
+    .reservation #reservation-form input[name='tour_id'] {
       display: none;
     }
+
+  #reservation-form {
+    width: 100%;
+  }
+  #reservation-btn {
+    width: inherit;
+  }

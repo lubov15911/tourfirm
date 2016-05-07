@@ -62,6 +62,19 @@ module.exports = function(passport){
 
   router.post('/search', controller.search);
 
+  router.post('/tour', controller.getTourInfo);
+
+
+  router.get('/reservation', function(req, res) {
+    res.redirect('/search');
+  });
+
+  router.post('/reservation', function(req, res) {
+    res.render('reservation', { message: req.body.id });
+  });
+
+  router.post('/sendReservation', controller.sendReservation);
+
   return router;
 };
 

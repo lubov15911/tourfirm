@@ -1,22 +1,19 @@
 extends layout
 
--var i = 0
-
 block content
-  include parts/filterFields
-  include parts/searchField
-  section.result-searching
+  section.tour-info
     ul
       if message
         each i in message
           li
+            h1 ИНФОРМАЦИЯ О ТУРЕ!
             img.small-img(src='#{i.hotel.image}')
             h1 #{i.tour_name}
             p Страна #{i.hotel.address.country}
             p Стоимость #{i.price.USD} USD
-            form.more-info-form(action='/tour' method='POST')
+            form.reservation-page-form(action='/reservation' method='POST')
               input(type='number', name='id', value='#{i._id}', required)
-              button#more-info-btn(type='submit') Подробнее
+              button#reservation-page-btn(type='submit') Оставить заказ на бронь
             p.clear-fix
       else
         li
