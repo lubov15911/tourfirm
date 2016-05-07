@@ -19,7 +19,8 @@ var TourSchema = new mongoose.Schema({
         RUB: Number
     },
     number_of_tickets: Number,
-    description: String
+    description: String,
+    tags: String
 });
 
 
