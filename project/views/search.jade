@@ -1,6 +1,13 @@
 extends layout
 
+-var i = 0
+
 block content
   include parts/filterFields
   include parts/searchField
-  hl Username ---> #{message.description}
+  ul
+    if message
+      each i in message
+        li tour_name ---> #{i}
+    else
+      li qwerty

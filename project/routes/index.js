@@ -3,6 +3,7 @@ var router = express.Router();
 var controller = require('../controllers/controller');
 var search = require('../controllers/searching');
 
+var Tour = require('../models/tour');
 
 var isAuthenticated = function (req, res, next) {
   // if user is authenticated in the session, call the next() to call the next request handler
@@ -56,13 +57,24 @@ module.exports = function(passport){
   });
 
   router.get('/search', function(req, res) {
-    res.render('search', { message: req.flash('message') });
+    res.render('search');
   });
 
-  router.post('/search', function(req, res) {
-    res.render('search', { message: controller.search(JSON.stringify(req.body)) });
-    //controller.search(JSON.stringify(req.body));
-  });
+  router.post('/search', controller.search);
 
   return router;
 };
+
+//var tour = new Tour({
+//    _id: 1,
+//    hotel_id: hotel._id,
+//    tour_name: "AGAPI BEACH",
+//    transportation: "air",
+//    price: {
+//        USD: 1542,
+//        EUR: 1342,
+//        RUB: 101989
+//    },
+//    number_of_tickets: 1000,
+//    description: "Отель с зеленой ухоженной территорией. Разнообразное питание на основе программы «все включено», ежедневные вечерние и дневные мероприятия для взрослых и детей. Развитая инфраструктура. Есть русскоязычный персонал. Напротив отеля автобусная остановка, удобное сообщение с центром Ираклиона. Рекомендуем для семейного отдыха."
+//});
