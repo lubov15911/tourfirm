@@ -3,7 +3,10 @@ var Reservation = require('../models/reservation');
 module.exports = function(req, res, next) {
 
     console.log('***********');
-    console.log(req.body);
+    console.log(req.user);
+    var online = (!req.user);
+
+    console.log(online);
     var item = req.body;
     console.log(item);
     console.log('***********');
@@ -14,7 +17,7 @@ module.exports = function(req, res, next) {
         email: item.email,
         phone: item.phone,
         tickets: item.tickets,
-        onlineStatus: true,
+        onlineStatus: online,
         executionStatus: false
     });
 
@@ -30,7 +33,7 @@ module.exports = function(req, res, next) {
     console.log('tttttttttttttttttt');
 
 
-    return res.render('reservation', { answer: true });
+    return res.render('reservation', { answer: true, user: req.user });
     //    if (!err) {
     //        console.log(tour);
     //

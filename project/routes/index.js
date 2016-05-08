@@ -52,7 +52,7 @@ module.exports = function(passport){
   });
 
   router.get('/search', function(req, res) {
-    res.render('search');
+    res.render('search', { user: req.user }); //
   });
 
   router.post('/search', controller.search);
@@ -60,7 +60,7 @@ module.exports = function(passport){
   router.post('/tour', controller.getTourInfo);
 
   router.get('/reservation', function(req, res) {
-    res.redirect('/search');
+    res.redirect('search');
   });
 
   router.post('/reservation', function(req, res) {
@@ -72,7 +72,7 @@ module.exports = function(passport){
   router.post('/filter', controller.filter);
 
   router.get('/offlinereservation', isAuthenticated, function(req, res) {
-    res.render('offlinereservation', { user: req.user });
+    res.render('search', { user: req.user });
   });
 
   router.get('/createdocs', isAuthenticated, function(req, res) {

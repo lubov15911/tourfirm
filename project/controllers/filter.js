@@ -87,6 +87,11 @@ module.exports = function(req, res, next) {
     console.log(filter);
 
     console.log('4***********');
+
+
+    console.log(req.user);
+    console.log('5***********');
+
     return Tour.find(filter, function (err, tour) {
         if (!err) {
             console.log(tour);

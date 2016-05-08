@@ -22,5 +22,8 @@ block content
       button#reservation-btn(type='submit') Забронировать
     if answer
       div#done-popup.popup
-        p Наши операторы свяжутся с Вами в ближайшее время. Спасибо за выбор нашего агенства!
+        if user
+          p #{user.username}Заявление оформлено
+        else
+          p Наши операторы свяжутся с Вами в ближайшее время. Спасибо за выбор нашего агенства!
         button.btn-close &#x274C;

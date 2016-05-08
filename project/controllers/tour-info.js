@@ -8,6 +8,9 @@ module.exports = function(req, res, next) {
     console.log(re);
     console.log('***********');
 
+    console.log(req.user);
+    console.log('6***********');
+
     return Tour.find({ '_id': re }, function (err, tour) {
         if (!err) {
             console.log(tour);
