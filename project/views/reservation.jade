@@ -18,7 +18,7 @@ block content
       label.tickets
         span Количество заказываемых билетов*:
         input(type='number', name='tickets', min='1', value='1', required)
-      input(type='number', name='tour_id', value='#{message}', required)
+      input.invisible(type='number', name='tour_id', value='#{message}', required)
       button#reservation-btn(type='submit') Забронировать
     if answer
       div#done-popup.popup

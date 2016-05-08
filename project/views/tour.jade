@@ -1,4 +1,5 @@
 extends layout
+-var i = 0
 
 block content
   section.tour-info
@@ -6,14 +7,20 @@ block content
       if message
         each i in message
           li
-            h1 ИНФОРМАЦИЯ О ТУРЕ!
-            img.small-img(src='#{i.hotel.image}')
+            img.img(src='#{i.hotel.image}')
             h1 #{i.tour_name}
-            p Страна #{i.hotel.address.country}
-            p Стоимость #{i.price.USD} USD
+              span  (#{i.hotel.stars}*)
+            h3.tag #{i.tags}
+            h3.pin #{i.hotel.address.country}, г.#{i.hotel.address.city}
+            div.descr
+              p #{i.description}
+            p.transp Как добраться: #{i.transportation}
+            ul
+              p.cost Стоимость (на одного человека):
+              li.price #{i.price.USD} USD
+              li.price #{i.price.EUR} EUR
+              li.price #{i.price.RUB} RUB
             form.reservation-page-form(action='/reservation' method='POST')
-              input(type='number', name='id', value='#{i._id}', required)
+              input.invisible(type='number', name='id', value='#{i._id}', required)
               button#reservation-page-btn(type='submit') Оставить заказ на бронь
             p.clear-fix
-      else
-        li

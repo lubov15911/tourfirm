@@ -12,7 +12,7 @@ footer.footer
       label.password
         span Пароль:
         input(type='password', name='password', required)
-      button#check-user-btn.btn-input.btn-signin(type='submit') Войти
+      button#check-user-btn(type='submit') Войти
     button.btn-close &#x274C;
   div#sighup-popup.popup
     form#sighup-user-form(action='/signup' method='POST')
@@ -22,5 +22,5 @@ footer.footer
       label.password
         span Пароль:
         input(type='password', name='password', required)
-      button#sighup-user-btn.btn-input.btn-signin(type='submit') Регистрация
+      button#sighup-user-btn(type='submit') Регистрация
     button.btn-close &#x274C;

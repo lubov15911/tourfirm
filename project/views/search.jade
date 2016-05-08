@@ -11,12 +11,15 @@ block content
         each i in message
           li
             img.small-img(src='#{i.hotel.image}')
-            h1 #{i.tour_name}
-            p Страна #{i.hotel.address.country}
-            p Стоимость #{i.price.USD} USD
-            form.more-info-form(action='/tour' method='POST')
-              input(type='number', name='id', value='#{i._id}', required)
-              button#more-info-btn(type='submit') Подробнее
-            p.clear-fix
-      else
-        li
+            div.info
+              h1 #{i.tour_name}
+              p #{i.hotel.address.country}, г. #{i.hotel.address.city}
+              ul Стоимость:
+                li.price #{i.price.USD} USD
+                li.price #{i.price.EUR} EUR
+                li.price #{i.price.RUB} RUB
+            div.btn
+              form.more-info-form(action='/tour' method='POST')
+                input.invisible(type='number', name='id', value='#{i._id}', required)
+                button#more-info-btn(type='submit') Подробнее
+              p.clear-fix
