@@ -1,4 +1,10 @@
 extends layout
 
 block content
-  h1 WELCOME!! INFORMATION ABOUT US
+  div.home-page
+    img.img(src='/images/plyazhnyj-otdyh1.jpg')
+    h1 Добро пожаловать!
+    p Хочется отдохнуть, да?)
+    p Выбирай
+      a(href='/search')= ' "Поиск тура" '
+      span и бронируй быстрее

@@ -1,6 +1,35 @@
 extends layout
 
 block content
-  h1 offlinereservation
-  p Username ---> #{user.username}
-  include parts/reservationForm
+  -var i = 0
+
+  section.reservation.admin-res
+    h1 Поступившие заявления на бронирование:
+    h3 * Перед оформлением необходимо связаться с клиентом.
+    form(action='/executeReservation' method='POST')
+      table
+        tr
+          th Оформить
+          th ФИО
+          th Email
+          th Телефон
+          th Количество билетов
+        if message
+          each i in message
+            tr
+              td
+                label
+                  input(type='checkbox', name='#{i._id}', id='#{i._id}')
+              td #{i.fullname}
+              td #{i.email}
+              td #{i.phone}
+              td #{i.tickets}
+        tr
+          td
+            label
+              input(type='checkbox', name='reservations')
+          td 5
+          td 6
+          td 7
+          td 8
+      button#reservation-page-btn(type='submit') Оформить выбранные

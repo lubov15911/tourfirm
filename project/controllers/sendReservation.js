@@ -21,17 +21,12 @@ module.exports = function(req, res, next) {
         executionStatus: false
     });
 
-    var t = reservation.save(function(err) {
+    reservation.save(function(err) {
         if (err) {
             console.log('3ERROR!!!');
             console.log(err.stack);
         }
     });
-
-    console.log('tttttttttttttttttt');
-    console.log(t);
-    console.log('tttttttttttttttttt');
-
 
     return res.render('reservation', { answer: true, user: req.user });
     //    if (!err) {

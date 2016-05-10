@@ -348,6 +348,7 @@ a {
     box-sizing: border-box;
     border: 10px solid white;
     margin-left: 15px;
+    margin-bottom: 15px;
   }
 
   .tour-info h1 {
@@ -435,4 +436,64 @@ a {
 
     .tour-info .price:nth-child(4):before {
       background: url('../images/rub.png');
+    }
+
+.home-page {
+  padding: 40px;
+  text-align: center;
+}
+
+  .home-page .img {
+    width: 400px;
+  }
+
+  .home-page h1 {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  .home-page p {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
+.admin-res {
+  width: 100%;
+}
+
+  .admin-res table {
+    background: white;
+    border: 2px solid #104E67;
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .admin-res table th {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .admin-res table tr:nth-child(2n) {
+    background: #fcf1fa;
+  }
+
+  .admin-res table tr:not(:first-child):hover {
+    background: rgba(255, 0, 0, 0.2);
+  }
+
+    .admin-res table tr td,
+    .admin-res table tr th {
+      box-sizing: border-box;
+      padding: 10px 5px;
+    }
+
+    .admin-res table tr td:first-child,
+    .admin-res table tr th:first-child,
+    .admin-res table label > input {
+      width: 80px;
+    }
+
+    .admin-res table tr td:last-child {
+      text-align: center;
     }

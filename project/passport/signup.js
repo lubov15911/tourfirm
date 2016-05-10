@@ -20,7 +20,7 @@ module.exports = function(passport){
                     // already exists
                     if (user) {
                         console.log('User already exists with username: '+username);
-                        return done(null, false, req.flash('message','User Already Exists'));
+                        return done(null, false, req.flash('message','Пользователь с таким логином уже существует, придумайте что-нибудь еще :)'));
                     } else {
                         // if there is no user with that email
                         // create the user
@@ -29,14 +29,16 @@ module.exports = function(passport){
                         // set the user's local credentials
                         newUser.username = username;
                         newUser.password = createHash(password);
+                        newUser.firstname = req.param('firstName');
+                        newUser.lastname = req.param('lastName');
 
                         // save the user
                         newUser.save(function(err) {
                             if (err){
-                                console.log('Error in Saving user: '+err);
+                                console.log('Ошибка при сохранении пользователя: '+err);
                                 throw err;
                             }
-                            console.log('User Registration succesful');
+                            console.log('Регистрация прошла успешно');
                             return done(null, newUser);
                         });
                     }

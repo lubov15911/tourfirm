@@ -1,9 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var controller = require('../controllers/controller');
-var search = require('../controllers/searching');
-
-var Tour = require('../models/tour');
+//var search = require('../controllers/searching');
 
 var isAuthenticated = function (req, res, next) {
   // if user is authenticated in the session, call the next() to call the next request handler
@@ -71,9 +69,10 @@ module.exports = function(passport){
 
   router.post('/filter', controller.filter);
 
-  router.get('/offlinereservation', isAuthenticated, function(req, res) {
-    res.render('search', { user: req.user });
-  });
+  router.get('/offlinereservation', isAuthenticated, controller.getReservations);
+
+  router.post('/executeReservation', controller.executeReservation);
+
 
   router.get('/createdocs', isAuthenticated, function(req, res) {
     res.render('createdocs', { user: req.user });
