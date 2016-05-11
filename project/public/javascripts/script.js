@@ -12,6 +12,11 @@
     $('.btn-close').on('click', function() {
         $('.popup').hide();
     });
+
+    $(document).ready(function() {
+
+        $('#none-btn').trigger('click');
+    });
 /*
     $('#check-user-btn').on('click', function() {
 

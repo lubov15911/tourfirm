@@ -1,0 +1,17 @@
+table
+  tr
+    th Оформить
+    th ФИО
+    th Email
+    th Телефон
+    th Количество билетов
+  if message
+    each i in message
+      tr
+        td
+          label
+            input(type='checkbox', name='#{i._id}', id='#{i._id}')
+        td #{i.fullname}
+        td #{i.email}
+        td #{i.phone}
+        td #{i.tickets}

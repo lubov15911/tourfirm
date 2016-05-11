@@ -73,10 +73,11 @@ module.exports = function(passport){
 
   router.post('/executeReservation', controller.executeReservation);
 
+  router.post('/createDocs', controller.createDocs);
 
-  router.get('/createdocs', isAuthenticated, function(req, res) {
-    res.render('createdocs', { user: req.user });
-  });
+  router.get('/createdocs', isAuthenticated, controller.getDataForDocs);
+
+  router.post('/deletedocs', controller.deleteDataForDocs);
 
   router.get('/statistics', isAuthenticated, function(req, res) {
     res.render('statistics', { user: req.user });

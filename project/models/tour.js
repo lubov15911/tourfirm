@@ -23,5 +23,9 @@ var TourSchema = new mongoose.Schema({
     tags: String
 });
 
+TourSchema.methods.getPrices = function (tickets) {
+
+    return [ +this.price.USD * tickets, +this.price.EUR * tickets, +this.price.RUB * tickets ];
+};
 
 module.exports = mongoose.model('Tour', TourSchema);

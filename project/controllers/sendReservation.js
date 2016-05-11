@@ -18,7 +18,8 @@ module.exports = function(req, res, next) {
         phone: item.phone,
         tickets: item.tickets,
         onlineStatus: online,
-        executionStatus: false
+        executionStatus: false,
+        deleteStatus: false
     });
 
     reservation.save(function(err) {

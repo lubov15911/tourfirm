@@ -1,5 +1,11 @@
 extends layout
 
 block content
-  h1 createdocs
-  p Username ---> #{user.username}
+  -var i = 0
+
+  section.reservation.admin-res
+    h1 Заявления, по которым необходимо оформить документы:
+    h3 * Перед оформлением необходимо связаться с клиентом.
+    form(action='/createDocs' method='POST')
+      include parts/table
+      button#reservation-page-btn(type='submit') Составить документы
