@@ -83,5 +83,11 @@ module.exports = function(passport){
     res.render('statistics', { user: req.user });
   });
 
+  router.get('/news', function(req, res) {
+    res.render('news');
+  });
+
+  router.post('/email', controller.email);
+
   return router;
 };

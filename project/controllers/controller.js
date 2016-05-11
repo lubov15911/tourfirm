@@ -7,6 +7,7 @@ var executeReservation = require('./executeReservation');
 var getDataForDocs = require('./getDataForDocs');
 var createDocs = require('./createDocs');
 var deleteDataForDocs = require('./deleteDataForDocs');
+var email = require('./email');
 
 module.exports = {
     search: search,
@@ -17,5 +18,6 @@ module.exports = {
     executeReservation: executeReservation,
     getDataForDocs: getDataForDocs,
     createDocs: createDocs,
-    deleteDataForDocs: deleteDataForDocs
+    deleteDataForDocs: deleteDataForDocs,
+    email: email
 };

@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  div.home-page
+    img.img(src='/images/plyazhnyj-otdyh1.jpg')
+    h1 Отправка письма
+    form#filter-form(action='/email' method='POST')
+      label.name
+        span Ваше имя*:
+        input(type='text', name='name', required, autofocus)
+      label.email
+        span E-mail*:
+        input(type='email', name='email', placeholder='lubov15911@gmail.com',  required)
+      label.title
+        span Тема*:
+        input(type='text', name='title', required)
+      label.text
+        textarea(name='text', required)
+      button#email-btn(type='submit') Отправить
