@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 var user = require('../models/user');
+var Tour = require('../models/tour');
 
 module.exports = function(done) {
 
@@ -26,6 +27,8 @@ module.exports = function(done) {
                 console.log('MEOW');
             }
         });
+
+
 
 
         console.info('Started connection on mongodb://localhost/tourfirm, waiting for it to open...');

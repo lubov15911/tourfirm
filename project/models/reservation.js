@@ -53,10 +53,4 @@ ReservationSchema.methods.print = function () {
     });
 };
 
-ReservationSchema.methods.delete = function () {
-
-    this.deleteStatus = true;
-};
-
-
 module.exports = mongoose.model('Reservation', ReservationSchema);
