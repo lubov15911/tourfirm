@@ -49,7 +49,7 @@ module.exports = function(passport){
   });
 
   router.get('/search', function(req, res) {
-    res.render('search', { user: req.user }); //
+    res.render('search', { user: req.user });
   });
 
   router.post('/search', controller.search);

@@ -36,9 +36,8 @@ ReservationSchema.methods.print = function () {
     tour.findById(this.tour_id, function (err, tour) {
         if (err) return handleError(err);
 
-        console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
         summ = tour.getPrices(tickets);
-        console.log(summ);
+        console.log('Summ' + summ);
 
         var text = '\n\n' +
             '\t\t\tТУРИСТИЧЕСКАЯ ПУТЕВКА\n\n' +

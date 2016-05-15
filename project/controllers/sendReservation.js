@@ -2,14 +2,8 @@ var Reservation = require('../models/reservation');
 
 module.exports = function(req, res, next) {
 
-    console.log('***********');
-    console.log(req.user);
     var online = (!req.user);
-
-    console.log(online);
     var item = req.body;
-    console.log(item);
-    console.log('***********');
 
     var reservation = new Reservation({
         tour_id: item.tour_id,
@@ -30,15 +24,4 @@ module.exports = function(req, res, next) {
     });
 
     return res.render('reservation', { answer: true, user: req.user });
-    //    if (!err) {
-    //        console.log(tour);
-    //
-    //        return res.render('tour', { message: tour });
-    //        //return tour;
-    //    } else {
-    //        res.statusCode = 500;
-    //        log.error('Internal error(%d): %s', res.statusCode, err.message);
-    //        return res.send({error: 'Server error'});
-    //    }
-    //})
 }

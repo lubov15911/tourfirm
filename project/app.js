@@ -27,7 +27,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Passport:
 var passport = require('passport');
-//var LocalStrategy = require('passport-local').Strategy;
 var session = require('express-session');
 
 app.use(session({ secret: 'SECRET' }));
@@ -76,22 +75,3 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
-
-
-//              var App = (function () {
-//                var instance;
-//
-//                return function Construct_singletone () {
-//                  if (instance) {
-//                    return instance;
-//                  }
-//                  if (this && this.constructor === Construct_singletone) {
-//                    instance = this;
-//                  } else {
-//                    return new Construct_singletone();
-//                  }
-//                }
-//              }());
-//
-//
-//App
