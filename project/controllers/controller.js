@@ -21,3 +21,35 @@ module.exports = {
     deleteDataForDocs: deleteDataForDocs,
     email: email
 };
+
+
+//
+//
+//var Model = {
+//    search: search,
+//    getTourInfo: tour,
+//    sendReservation: sendReservation,
+//    filter: filter,
+//    getReservations: getReservations,
+//    executeReservation: executeReservation,
+//    getDataForDocs: getDataForDocs,
+//    createDocs: createDocs,
+//    deleteDataForDocs: deleteDataForDocs,
+//    email: email
+//};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
